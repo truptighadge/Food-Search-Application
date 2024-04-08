@@ -1,0 +1,300 @@
+{
+	"info": {
+		"_postman_id": "84aec7ab-e8ae-4f00-8780-3657cdfe331b",
+		"name": "food search application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34003038"
+	},
+	"item": [
+		{
+			"name": "registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Kartiki@123\",\r\n    \"email\":\"kartiki@gmail.com\",\r\n    \"password\":\"kartiki@123\"\r\n}\r\n  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/account/register/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"account",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"kartiki@123\",\r\n    \"password\":\"kartiki@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/account/login/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"account",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "without filter",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token 3a4865193075da91c2e44e2c793ec5b2b8219a75",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/app/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"app",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "category filter",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 3a4865193075da91c2e44e2c793ec5b2b8219a75",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/app/?category=Pizza,Pasta",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"app",
+						""
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "Pizza,Pasta"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "toppings filter",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token 3a4865193075da91c2e44e2c793ec5b2b8219a75",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/app/?toppings=cheddar, mozzarella",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"app",
+						""
+					],
+					"query": [
+						{
+							"key": "toppings",
+							"value": "cheddar, mozzarella"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "rating filter",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token 3a4865193075da91c2e44e2c793ec5b2b8219a75",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/app/?rating_min=4&rating_max=4.5",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"app",
+						""
+					],
+					"query": [
+						{
+							"key": "rating_min",
+							"value": "4"
+						},
+						{
+							"key": "rating_max",
+							"value": "4.5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "type filter",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 3a4865193075da91c2e44e2c793ec5b2b8219a75",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/app/?type=Veg",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"app",
+						""
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "Veg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mix filter",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 3a4865193075da91c2e44e2c793ec5b2b8219a75",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/app/?rating_min=4&rating_max=4.5&type=Veg&toppings=Cheddar&category=Curry",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"app",
+						""
+					],
+					"query": [
+						{
+							"key": "rating_min",
+							"value": "4"
+						},
+						{
+							"key": "rating_max",
+							"value": "4.5"
+						},
+						{
+							"key": "type",
+							"value": "Veg"
+						},
+						{
+							"key": "toppings",
+							"value": "Cheddar"
+						},
+						{
+							"key": "category",
+							"value": "Curry"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
